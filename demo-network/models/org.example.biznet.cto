@@ -1,0 +1,55 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace org.example.biznet
+
+/**
+* Class define participant that is org
+  * email
+  * name
+  * address
+} 
+ */
+
+participant User identified by email {
+  o String email  
+  o String name
+  o String address
+}
+/**
+* Class define participant that is leaner, third-party-related
+ */
+participant Guest identified by email {
+  o String email
+  o String name
+}
+/**
+* Asset is certi:
+  * assetId : unique value 
+  * name_cert : name of the cert
+  * start_date : the day that cert is given for someone
+  * expire_date :  the day thar cert is expired
+  * bywhom : type is "user". it is the org who set the cert for learner
+  * forwhom :  a learner that is told above
+ */
+
+asset Certi_Asset identified by assetId {
+  o String assetId
+  o String name_cert
+  o String start_date // format dd/mm/yyyy
+  o String expire_date // format dd/mm/yyyy
+  --> User bywhom
+  --> User forwhom
+}
+
+transaction SetAssetValue {
+  --> Certi_Asset selectedAsset
+  
+}
+/**
+* transaction to query the certi with user that is inputed
+ */
+transaction QueryAssetValue {
+  -->User input
+}

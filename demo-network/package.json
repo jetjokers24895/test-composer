@@ -1,0 +1,22 @@
+{
+  "name": "demo-network",
+  "version": "0.0.1",
+  "description": "certi via blockchain",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "TA CONG DUY",
+  "email": "13520149@gm.uit.edu.vn",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "latest",
+    "composer-client": "latest",
+    "composer-common": "latest",
+    "composer-connector-embedded": "latest",
+    "chai": "latest",
+    "eslint": "latest",
+    "istanbul": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}

@@ -1,0 +1,30 @@
+/**
+ * Access control rules for demo-network
+ */
+rule Default {
+    description: "Allow  participants user access to all resources"
+    participant: "org.example.biznet.User"
+    operation: ALL
+    resource: "org.example.biznet.*"
+    action: ALLOW
+}
+
+/**
+* Guest only query
+*/
+
+rule forGuest {
+    description: "Alow participant Guest access to query trans"
+    participant: "org.example.biznet.Guest"
+    operation: READ
+    resource: "org.example.biznet.Certi_Asset"
+    action: ALLOW
+}
+
+rule SystemACL {
+  description:  "System ACL to permit all access"
+  participant: "ANY"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
